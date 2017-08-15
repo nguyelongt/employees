@@ -7,7 +7,19 @@ function ready() {
     var eric = new Employee("4", "Eric", new Date(), "eric@fullstackdev.com", "Jr. Full Stack Developer", true, 90000);
     var phuc = new Employee("5", "Phuc", new Date(), "eric@fullstackdev.com", "Jr. Full Stack Developer", true, 90000);
     employees.push(kim, long, elisha, eric, phuc);
-    console.log(employees);
+    for (var index = 0; index < employees.length; index++) {
+        var employee = employees[index];
+        var trData = '<tr>';
+        trData += '<td>' + employee.id + '</td>';
+        trData += '<td>' + employee.name + '</td>';
+        trData += '<td>' + employee.dateOfHire.toDateString() + '</td>';
+        trData += '<td>' + employee.email + '</td>';
+        trData += '<td>' + employee.job + '</td>';
+        trData += '<td>' + employee.active + '</td>';
+        trData += '<td>$' + Number(employee.salary.toFixed(0)).toLocaleString() + '</td>';
+        trData += '</tr>';
+        tbodyCtrl.innerHTML += trData;
+    }
 }
 ;
 var Employee = (function () {

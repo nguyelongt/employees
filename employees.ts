@@ -13,7 +13,20 @@ function ready() {
 
     employees.push(kim, long, elisha, eric, phuc);
 
-    console.log(employees);
+    for (var index = 0; index < employees.length; index++) {
+        let employee = employees[index];
+        let trData = '<tr>';
+        trData += '<td>' + employee.id + '</td>';
+        trData += '<td>' + employee.name + '</td>';
+        trData += '<td>' + employee.dateOfHire.toDateString() + '</td>';
+        trData += '<td>' + employee.email + '</td>';
+        trData += '<td>' + employee.job + '</td>';
+        trData += '<td>' + employee.active + '</td>';
+        trData += '<td>$' + Number(employee.salary.toFixed(0)).toLocaleString() + '</td>';
+        trData += '</tr>';
+
+        tbodyCtrl.innerHTML += trData;
+    }
 };
 
 class Employee {
