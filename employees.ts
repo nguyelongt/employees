@@ -34,14 +34,14 @@ class Employee {
     id: string;
     name: string;
     dateOfHire: Date;
-    email: string;
+    mail: string;
     job: string;
     active: boolean;
     salary: number;
 
     // Constructor
     constructor(id: string, name: string, dateOfHire: Date, email: string, job: string, active: boolean, salary: number) {
-        this.id = id;
+        this.id = id; 
         this.name = name;
         this.dateOfHire = dateOfHire;
         this.email = email;
